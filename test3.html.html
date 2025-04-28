@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peddle | User Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f7f7f2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .sidebar {
+      background-color: #032b43;
+      min-height: 100vh;
+    }
+    .sidebar a {
+      color: #f7f7f2;
+      text-decoration: none;
+      padding: 12px 20px;
+      display: block;
+    }
+    .sidebar a:hover, .sidebar .active {
+      background-color: #073b4c;
+    }
+    .topbar {
+      background-color: #6290c8;
+      color: white;
+      padding: 15px;
+    }
+    .widget {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .map-placeholder {
+      background-color: #e0e0e0;
+      height: 250px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+    }
+
+    .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.card .icon {
+  opacity: 0.8;
+}
+  </style>
+</head>
+<body>
+<div class="d-flex">
+  <!-- Sidebar -->
+  <div class="sidebar p-3">
+    <h4 class="text-white">Peddle</h4>
+    <a href="#" class="active"><i class="fas fa-home me-2"></i> Dashboard</a>
+    <a href="#"><i class="fas fa-bicycle me-2"></i> Active Rides</a>
+    <a href="#"><i class="fas fa-history me-2"></i> Ride History</a>
+    <a href="#"><i class="fas fa-wallet me-2"></i> Wallet</a>
+    <a href="#"><i class="fas fa-id-card me-2"></i> Membership</a>
+    <a href="#"><i class="fas fa-user me-2"></i> Profile</a>
+    <a href="#"><i class="fas fa-cog me-2"></i> Settings</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1">
+    <!-- Topbar -->
+    <div class="topbar d-flex justify-content-between align-items-center px-4">
+      <h5>Welcome back, Ife 👋</h5>
+      <div>
+        <i class="fas fa-bell me-4"></i>
+        <img src="https://via.placeholder.com/40" class="rounded-circle" alt="User" />
+      </div>
+    </div>
+
+    <!-- Widgets -->
+
+
+    <div class="card shadow-sm p-4 rounded-4 border-0 bg-warning bg-opacity-25">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-sun fa-2x text-warning me-3"></i>
+        <div>
+          <h6 class="mb-0">Sunny, 32°C</h6>
+          <small class="text-muted">Perfect weather for a ride ☀️</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm p-4 rounded-4 border-0 bg-secondary bg-opacity-25">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-cloud fa-2x text-secondary me-3"></i>
+        <div>
+          <h6 class="mb-0">Cloudy, 28°C</h6>
+          <small class="text-muted">Might be breezy - ride safe 🌬️</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm p-4 rounded-4 border-0 bg-info bg-opacity-25">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-cloud-showers-heavy fa-2x text-info me-3"></i>
+        <div>
+          <h6 class="mb-0">Rainy, 24°C</h6>
+          <small class="text-muted">Might want to postpone your ride ☔</small>
+        </div>
+      </div>
+    </div>
+
+      <!-- <div class="card shadow-sm p-4 rounded-4 border-0 bg-light">
+        <blockquote class="blockquote mb-0">
+          <p>"Life is like riding a bicycle. To keep your balance, you must keep moving."</p>
+          <footer class="blockquote-footer mt-2">Albert Einstein</footer>
+        </blockquote>
+      </div> -->
+<!-- Include this in your <head> -->
+
+  <div class="card shadow-sm p-4 rounded-4 border-0 mb-4" style="background: linear-gradient(135deg, #6290C8, #9D5C63); color: white;">
+    <h5 class="fw-semibold mb-2">Active Ride</h5>
+    <p class="mb-1">From <strong>Ikeja</strong> to <strong>Lekki</strong></p>
+    <p class="mb-1">Distance: <strong>25km</strong> | Estimated Time: <strong>45 mins</strong></p>
+    <p class="mb-0">Started at: <strong>10:00 AM</strong></p>
+  </div>
+
+  <div class="card shadow-sm p-3 rounded-4 border-0 mb-4" style="height: 300px;">
+    <div class="h-100 w-100 d-flex justify-content-center align-items-center text-muted">
+      [Live Map Placeholder]
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="card text-center shadow-sm p-3 rounded-4 border-0">
+        <h6 class="text-muted">Speed</h6>
+        <h4 class="fw-bold">18 km/h</h4>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card text-center shadow-sm p-3 rounded-4 border-0">
+        <h6 class="text-muted">Time Elapsed</h6>
+        <h4 class="fw-bold">15 mins</h4>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card text-center shadow-sm p-3 rounded-4 border-0">
+        <h6 class="text-muted">Calories Burned</h6>
+        <h4 class="fw-bold">120 kcal</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-danger px-4 py-2 rounded-4 fw-semibold">
+      <i class="fas fa-stop me-2"></i>End Ride
+    </button>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>

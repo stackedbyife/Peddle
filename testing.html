@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ride History</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    h2 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 30px;
+      border-left: 3px solid #6290C8;
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .timeline-item::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: #6290C8;
+      border: 3px solid white;
+      border-radius: 50%;
+      position: absolute;
+      left: -10px;
+      top: 0;
+    }
+
+    .timeline-item h5 {
+      margin: 0 0 0.3rem;
+      font-weight: 600;
+    }
+
+    .timeline-item small {
+      color: #666;
+    }
+
+    .ride-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 3rem;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .ride-table th,
+    .ride-table td {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    .ride-table th {
+      background: #6290C8;
+      color: white;
+    }
+
+    .ride-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .badges {
+      display: flex;
+      gap: 1rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 1.5s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .badge {
+      background: linear-gradient(135deg, #9D5C63, #6290C8);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .badge:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🚴 Ride History</h2>
+
+  <!-- Timeline -->
+  <div class="timeline">
+    <div class="timeline-item">
+      <h5>Ikeja ➜ Lekki</h5>
+      <small>Completed on Mar 24, 2025 - 12.4km</small>
+    </div>
+    <div class="timeline-item">
+      <h5>Yaba ➜ Victoria Island</h5>
+      <small>Completed on Mar 22, 2025 - 9.7km</small>
+    </div>
+    <div class="timeline-item">
+      <h5>Ojota ➜ Maryland</h5>
+      <small>Completed on Mar 20, 2025 - 6.2km</small>
+    </div>
+  </div>
+
+  <!-- Ride Summary Table -->
+  <table class="ride-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Distance</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mar 24</td>
+        <td>Ikeja</td>
+        <td>Lekki</td>
+        <td>12.4km</td>
+        <td>45 mins</td>
+      </tr>
+      <tr>
+        <td>Mar 22</td>
+        <td>Yaba</td>
+        <td>VI</td>
+        <td>9.7km</td>
+        <td>38 mins</td>
+      </tr>
+      <tr>
+        <td>Mar 20</td>
+        <td>Ojota</td>
+        <td>Maryland</td>
+        <td>6.2km</td>
+        <td>22 mins</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Badges -->
+  <div class="badges">
+    <div class="badge">🏅 50km Milestone</div>
+    <div class="badge">🚀 Fastest Ride: 22 mins</div>
+    <div class="badge">🎯 3 Rides This Week</div>
+  </div>
+
+  <script>
+    // Animate all sections on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.timeline-item, .ride-table, .badges').forEach(el => {
+        el.style.animationPlayState = 'running';
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar Toggle Test</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Sidebar base styling */
+    #sidebar {
+      background-color: #032B43;
+      color: white;
+      height: 100vh;
+      padding-top: 2rem;
+    }
+
+    #sidebar .nav-link {
+      color: white;
+    }
+
+    /* Hide sidebar on mobile */
+    @media (max-width: 768px) {
+      #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        z-index: 1040;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      #sidebar.show {
+        transform: translateX(0);
+      }
+    }
+
+    /* Toggle button style */
+    #sidebarToggle {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1050;
+      background-color: #073B4C;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar Toggle Button -->
+  <button class="d-md-none" id="sidebarToggle">
+    <i class="bi bi-list fs-2"></i>
+  </button>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-2 d-md-block sidebar" id="sidebar">
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-house"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-clock-history"></i> History</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person"></i> Profile</a></li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-10 offset-md-2 p-3">
+        <h1>Welcome to the dashboard</h1>
+        <p>This is your main content area.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Sidebar Toggle -->
+  <script>
+    const toggleBtn = document.getElementById("sidebarToggle");
+    const sidebar = document.getElementById("sidebar");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>

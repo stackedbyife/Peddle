@@ -1,0 +1,201 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .SFNS-Bold;\f1\fnil\fcharset0 .SFNS-Regular;\f2\fnil\fcharset0 HelveticaNeue-Bold;
+\f3\froman\fcharset0 TimesNewRomanPSMT;\f4\fnil\fcharset0 .SFNS-RegularItalic;\f5\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red14\green14\blue14;}
+{\*\expandedcolortbl;;\cssrgb\c6700\c6700\c6700;}
+\margl1440\margr1440\vieww25400\viewh13280\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs30 \cf2 PROJECT TITLE: Peddle - Online Bicycle Rental System
+\f1\b0\fs28 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf2 USER STORY/DESCRIPTION:
+\f1\b0 \
+People can register as members and rent bicycles for a day to move around or reach their destination. Bicycle owners (vendors) can also list their bicycles for rent.\
+\
+
+\f2\b BY:
+\f1\b0  Ifeoluwa Koleoso\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs30 \cf2 ENTITIES IDENTIFICATION
+\f1\b0\fs28 \
+\pard\tqr\tx260\tx420\li420\fi-420\sl324\slmult1\sb240\partightenfactor0
+
+\f3 \cf2 	1.	
+\f2\b Who are the users of the app?
+\f1\b0 \
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f2\b Members
+\f1\b0  \
+\
+\pard\tqr\tx260\tx420\li420\fi-420\sl324\slmult1\sb240\partightenfactor0
+
+\f3 \cf2 	2.	
+\f2\b What items in the application need to be stored?
+\f1\b0 \
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f2\b Bicycles
+\f1\b0  (Available for rent)\
+	\'95	
+\f2\b Rentals
+\f1\b0  (Track bicycle rental transactions)\
+	\'95	
+\f2\b Payments
+\f1\b0  (Store rental payments)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs30 \cf2 RELATIONSHIP IDENTIFICATION
+\f1\b0\fs28 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f2\b Vendors list bicycles for rent
+\f1\b0  - 
+\f2\b 1 Vendor can list many bicycles
+\f1\b0  
+\f4\i (1:M)
+\f1\i0 \
+	\'95	
+\f2\b Members can rent multiple bicycles, and a bicycle can be rented by multiple members (but at different times)
+\f1\b0  
+\f4\i (M:M)
+\f1\i0 \
+	\'95	
+\f2\b Each rental has a payment record
+\f1\b0  
+\f4\i (1:1)\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\i0\b\fs30 \cf2 DATABASE TABLES AND IMPORTANT COLUMNS
+\f1\b0\fs28 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs26 \cf2 1. Members Table (User details)
+\f1\b0\fs28 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f5 member_id
+\f1 \
+	\'95	
+\f5 full_name
+\f1 \
+	\'95	
+\f5 email
+\f1 \
+	\'95	
+\f5 phone_number
+\f1 \
+	\'95	
+\f5 password
+\f1 \
+	\'95	
+\f5 membership_type
+\f1  (Daily, Monthly, Annual)\
+	\'95	
+\f5 created_at
+\f1 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs26 \cf2 2. Stations Table (Bike docking stations)
+\f1\b0\fs28 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f5 station_id
+\f1  \
+	\'95	
+\f5 station_name
+\f1 \
+	\'95	
+\f5 location
+\f1 \
+	\'95	
+\f5 capacity
+\f1  (Total bike slots)\
+	\'95	
+\f5 available_bikes
+\f1  (Current available bikes)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs26 \cf2 3. Bicycles Table (Bikes available for rent)
+\f1\b0\fs28 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f5 bicycle_id
+\f1  \
+	\'95	
+\f5 station_id
+\f1  \
+	\'95	
+\f5 bicycle_status
+\f1  (Available, In Use, Maintenance)\
+	\'95	
+\f5 last_maintenance_date
+\f1 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs26 \cf2 4. Rentals Table (Ride sessions)
+\f1\b0\fs28 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f5 rental_id
+\f1  \
+	\'95	
+\f5 member_id
+\f1  \
+	\'95	
+\f5 bicycle_id
+\f1  \
+	\'95	
+\f5 start_station_id
+\f1  \
+	\'95	
+\f5 end_station_id
+\f1  \
+	\'95	
+\f5 start_time
+\f1 \
+	\'95	
+\f5 end_time
+\f1 \
+	\'95	
+\f5 ride_status
+\f1  (Active, Completed, Canceled)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs26 \cf2 5. Payments Table (Tracks ride payments)
+\f1\b0\fs28 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f5 payment_id
+\f1  \
+	\'95	
+\f5 member_id
+\f1  \
+	\'95	
+\f5 rental_id
+\f1  \
+	\'95	
+\f5 amount_paid
+\f1 \
+	\'95	
+\f5 payment_method
+\f1  (Card, Wallet, Cash)\
+	\'95	
+\f5 payment_status
+\f1  (Pending, Completed)\
+	\'95	
+\f5 transaction_date}
