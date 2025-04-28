@@ -2,7 +2,7 @@
 
 Peddle is a modern bike-sharing platform built with PHP and JavaScript, focusing on ride management, user experience, and real-world scalability.
 
-🌐 [Visit the Live Site](https://www.stackedbyife.com/peddle/)
+[![View Live](https://img.shields.io/badge/View-Live-green?style=for-the-badge&logo=vercel)](https://www.stackedbyife.com/peddle/)
 
 ## Features
 - Rent and return bicycles easily
